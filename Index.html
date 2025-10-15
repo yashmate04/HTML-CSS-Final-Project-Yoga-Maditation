@@ -1,1 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation & Yoga</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f9f9f9;
+            color: #333;
+        }
 
+        header {
+            background: #2e7d32;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #388e3c;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1552083375-1447ce886485') no-repeat center/cover; height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+            font-size: 2rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        /* About */
+        .about {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .about img {
+            width: 300px;
+            border-radius: 12px;
+        }
+
+        /* Programs */
+        .programs,
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Schedule */
+        .schedule {
+            text-align: center;
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule th,
+        .schedule td {
+            padding: 12px;
+            border: 1px solid #90caf9;
+        }
+
+        /* Form */
+        form {
+            background: #fce4ec;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        form input,
+        form textarea,
+        form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+        }
+
+        form button {
+            background: #2e7d32;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        form button:hover {
+            background: #1b5e20;
+        }
+
+        footer {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .social a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🌸 Meditation & Yoga 🌸</h1>
+        <p>Balance your mind, body & soul</p>
+    </header>
+
+    <nav>
+        <a href="./Index.html">Home</a>
+        <a href="./demo2.html">About</a>
+        <a href="./demo3.html">Programs</a>
+        <a href="./demo4.html">Testimonials</a>
+        <a href="./demo5.html">Schedule</a>
+        <a href="./demo6.html">Gallery</a>
+        <a href="./demo7.html">Contact</a>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>Find Inner Peace Through Yoga & Meditation</h2>
+    </div>
+
+    <div class="container">
+        <!-- About -->
+        <div class="about">
+            <img src="./Images/yoga pose photo.png" alt="Yoga Pose">
+            <div>
+                <h2>About Us</h2>
+                <p>
+                    We provide holistic yoga and meditation sessions to help you relieve stress,
+                    improve flexibility, and discover inner calm. Our certified trainers guide
+                    you on a journey of wellness and mindfulness.
+                </p>
+            </div>
+        </div>
+
+        <!-- Programs -->
+        <h2>Our Programs</h2>
+        <div class="programs">
+            <div class="card">
+                <img src="./Images/morning yoga routain.png" alt="Morning Yoga">
+                <h3>🧘 Morning Yoga</h3>
+                <p>Start your day with energizing yoga postures.</p>
+            </div>
+            <div class="card">
+                <img src="./Images/maditation.png" alt="Meditation">
+                <h3>🌙 Evening Meditation</h3>
+                <p>Calm your mind and release stress with guided meditation.</p>
+            </div>
+            <div class="card">
+                <img src="./Images/powerpresence.png" alt="Power Yoga">
+                <h3>💪 Power Yoga</h3>
+                <p>Boost stamina and flexibility with dynamic yoga sessions.</p>
+            </div>
+            <div class="card">
+                <img src="./Images/reatrateyoga.png" alt="Yoga Retreat">
+                <h3>🌿 Mindfulness Retreats</h3>
+                <p>Weekend retreats to reconnect with nature and yourself.</p>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <h2>What Our Students Say</h2>
+        <div class="testimonial">"These yoga classes changed my life! I feel calmer and healthier." - Priya</div>
+        <div class="testimonial">"The meditation sessions helped me manage stress at work." - Rohan</div>
+        <div class="testimonial">"Friendly trainers and peaceful environment. Highly recommend!" - Aisha</div>
+
+        <!-- Schedule -->
+        <h2>Weekly Schedule</h2>
+        <div class="schedule">
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Morning Yoga</th>
+                    <th>Evening Meditation</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>6:00 AM - 7:00 AM</td>
+                    <td>6:00 PM - 7:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>6:00 AM - 7:00 AM</td>
+                    <td>6:00 PM - 7:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>6:00 AM - 7:00 AM</td>
+                    <td>6:00 PM - 7:00 PM</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Gallery -->
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="./Images/yogaclass.png" alt="Yoga Class" class="card">
+            <img src="./Images/madiaionyoga.png" alt="Meditation" class="card">
+            <img src="./Images/outdoor.png" alt="Outdoor Yoga" class="card">
+        </div>
+
+        <!-- Contact Form -->
+        <h2>Join a Session</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone" required>
+            <textarea rows="4" placeholder="Message"></textarea>
+            <button type="submit">Register Now</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>📍 Location: Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
+        <p>Follow us:
+            <span class="social">
+                <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a> 
+                <a href="https://www.facebook.com/">📘 Facebook</a> 
+                <a href="https://www.instagram.com/">📸 Instagram</a>
+            </span>
+        </p>
+        <p>© 2025 Meditation & Yoga | All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
