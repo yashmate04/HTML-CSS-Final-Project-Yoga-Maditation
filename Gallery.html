@@ -2,87 +2,230 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | Meditation & Yoga</title>
+
     <style>
-        body {
+        /* Base */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: #f9f9f9;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to bottom right, #f4f9f4, #ffffff);
             color: #333;
+            overflow-x: hidden;
         }
 
+        /* Header */
         header {
-            background: #2e7d32;
+            background: linear-gradient(90deg, #2e7d32, #43a047);
             color: white;
-            padding: 20px;
+            padding: 50px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
         }
 
+        header h1 {
+            font-size: 2.4rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
         nav {
             background: #388e3c;
             display: flex;
             justify-content: center;
-            padding: 10px;
             flex-wrap: wrap;
+            padding: 15px 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 9;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 8px 15px;
-            font-weight: bold;
+            margin: 8px 18px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #ffeb3b;
+            transform: scale(1.05);
         }
 
+        /* Container */
         .container {
-            padding: 40px;
-            max-width: 1100px;
+            padding: 50px 25px;
+            max-width: 1200px;
             margin: auto;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
-            color: #2e7d32;
+            color: #1b5e20;
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Gallery Grid */
+        p {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Gallery */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            justify-items: center;
         }
 
         .gallery img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            transform: scale(1);
+            position: relative;
         }
 
         .gallery img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.3);
+            filter: brightness(1.1);
         }
 
+        /* Lightbox Overlay */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            padding-top: 80px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.85);
+            animation: fadeIn 0.5s;
+        }
+
+        .lightbox img {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #ffeb3b;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
         footer {
             background: #2e7d32;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 30px 10px;
+            margin-top: 60px;
+            font-size: 0.95rem;
         }
 
         .social a {
-            margin: 0 10px;
-            color: white;
+            margin: 0 8px;
+            color: #fff;
             text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+
+            .gallery img {
+                height: 200px;
+            }
+
+            .lightbox img {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            nav a {
+                margin: 6px 10px;
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+
+            .gallery {
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -105,32 +248,50 @@
 
     <div class="container">
         <h2>📸 Our Gallery</h2>
-        <p style="text-align:center; margin-bottom:30px;">A glimpse of our yoga sessions, meditation retreats, and
-            peaceful environment.</p>
+        <p>Discover the serenity of our yoga sessions, meditation retreats, and peaceful nature settings — where every
+            breath brings balance.</p>
 
         <div class="gallery">
-            <img src="./Images/DM6Pose.png" alt="Yoga Pose">
-            <img src="./Images/Dm6MDclass.png" alt="Meditation Class">
-            <img src="./Images/Dm6Grpyoga.png" alt="Group Yoga">
-            <img src="./Images/Dm6Yogaoutdoor.png" alt="Yoga Outdoors">
-            <img src="./Images/Dm6PacefullMD.png" alt="Peaceful Meditation">
-            <img src="./Images/Dm6Stodio.png" alt="Yoga Studio">
-            <img src="./Images/DM6Retrate.png" alt="Meditation Retreat">
-            <img src="./Images/Dm6Natureyoga.png" alt="Nature Yoga">
+            <img src="./Images/DM6Pose.png" alt="Yoga Pose" onclick="openLightbox(this)">
+            <img src="./Images/Dm6MDclass.png" alt="Meditation Class" onclick="openLightbox(this)">
+            <img src="./Images/Dm6Grpyoga.png" alt="Group Yoga" onclick="openLightbox(this)">
+            <img src="./Images/Dm6Yogaoutdoor.png" alt="Yoga Outdoors" onclick="openLightbox(this)">
+            <img src="./Images/Dm6PacefullMD.png" alt="Peaceful Meditation" onclick="openLightbox(this)">
+            <img src="./Images/Dm6Stodio.png" alt="Yoga Studio" onclick="openLightbox(this)">
+            <img src="./Images/DM6Retrate.png" alt="Meditation Retreat" onclick="openLightbox(this)">
+            <img src="./Images/Dm6Natureyoga.png" alt="Nature Yoga" onclick="openLightbox(this)">
         </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImg" src="" alt="Expanded View">
     </div>
 
     <footer>
         <p>📍 Location: Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
         <p>Follow us:
             <span class="social">
-                <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a>
-                <a href="https://www.facebook.com/">📘 Facebook</a>
-                <a href="https://www.instagram.com/">📸 Instagram</a>
+                <a href="#">🌐 Website</a>
+                <a href="#">📘 Facebook</a>
+                <a href="#">📸 Instagram</a>
             </span>
         </p>
-        <p>©️ 2025 Meditation & Yoga | All Rights Reserved</p>
+        <p>©️ 2025 Meditation & Yoga | All Rights Reserved 🌿</p>
     </footer>
+
+    <script>
+        // Lightbox script
+        function openLightbox(img) {
+            document.getElementById("lightbox").style.display = "block";
+            document.getElementById("lightboxImg").src = img.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
