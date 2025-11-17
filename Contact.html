@@ -6,123 +6,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Meditation & Yoga</title>
     <style>
-        body {
+        /* Reset & Base */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: #f9f9f9;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(180deg, #f3f9f4 0%, #fff 100%);
             color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
-            background: #2e7d32;
+            background: linear-gradient(90deg, #2e7d32, #43a047);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
 
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
         nav {
             background: #388e3c;
             display: flex;
             justify-content: center;
-            padding: 10px;
             flex-wrap: wrap;
+            padding: 15px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            margin: 8px 15px;
-            font-weight: bold;
+            margin: 8px 20px;
+            font-weight: 600;
+            transition: 0.3s ease;
+            font-size: 1rem;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #ffd54f;
+            transform: scale(1.05);
         }
 
         .container {
-            padding: 40px;
-            max-width: 1000px;
+            padding: 50px 25px;
+            max-width: 1100px;
             margin: auto;
         }
 
         h2 {
             text-align: center;
+            color: #1b5e20;
+            font-size: 1.8rem;
             margin-bottom: 20px;
-            color: #2e7d32;
         }
 
+        /* Contact Info */
         .contact-info {
             background: #e8f5e9;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 16px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-info div {
-            padding: 10px;
+        .contact-info div h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
         }
 
         .contact-info p {
-            margin: 8px 0;
+            margin: 6px 0;
+            font-size: 1rem;
         }
 
-        /* Form */
+        /* Contact Form */
         form {
-            background: #fce4ec;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 30px;
+            background: #fff3f7;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-4px);
         }
 
         form input,
         form textarea,
         form button {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 8px;
+            padding: 14px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: #2e7d32;
+            box-shadow: 0 0 6px rgba(46, 125, 50, 0.3);
         }
 
         form button {
-            background: #2e7d32;
-            color: white;
+            background: linear-gradient(90deg, #2e7d32, #388e3c);
+            color: #fff;
+            border: none;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         form button:hover {
             background: #1b5e20;
+            transform: scale(1.03);
         }
 
         /* Map */
         .map {
-            margin-top: 30px;
-            border-radius: 12px;
-            overflow: hidden;
+            margin-top: 50px;
+            text-align: center;
         }
 
-        iframe {
+        .map iframe {
             width: 100%;
-            height: 300px;
+            height: 400px;
+            border-radius: 16px;
             border: none;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
         }
 
+        /* Footer */
         footer {
             background: #2e7d32;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 25px 10px;
+            margin-top: 60px;
+            font-size: 0.95rem;
         }
 
         .social a {
-            margin: 0 10px;
-            color: white;
+            margin: 0 8px;
+            color: #fff;
             text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #ffd54f;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            form,
+            .contact-info {
+                padding: 20px;
+            }
+
+            .map iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 0.9rem;
+                margin: 6px 10px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            form input,
+            form textarea {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -134,45 +225,44 @@
     </header>
 
     <nav>
-            <a href="./Home.html">Home</a>
-            <a href="./Index.html">About</a>
-            <a href="./Programs.html">Programs</a>
-            <a href="./Testimonials.html">Testimonials</a>
-            <a href="./Schedual.html">Schedule</a>
-            <a href="./Gallery.html">Gallery</a>
-            <a href="./Contact.html">Contact</a>
+        <a href="./Home.html">Home</a>
+        <a href="./Index.html">About</a>
+        <a href="./Programs.html">Programs</a>
+        <a href="./Testimonials.html">Testimonials</a>
+        <a href="./Schedual.html">Schedule</a>
+        <a href="./Gallery.html">Gallery</a>
+        <a href="./Contact.html">Contact</a>
     </nav>
 
     <div class="container">
-        <h2>📞 Contact Us</h2>
+        <h2>📞 Get in Touch With Us</h2>
 
-        <!-- Contact Info -->
         <div class="contact-info">
             <div>
-                <h3>Address</h3>
-                <p>Green Valley Yoga Center</p>
-                <p>Mumbai, India</p>
+                <h3>🏡 Our Address</h3>
+                <p><strong>Green Valley Yoga Center</strong></p>
+                <p>Mumbai, Maharashtra, India</p>
+                <p>Open: Mon–Sat, 6 AM – 8 PM</p>
             </div>
             <div>
-                <h3>Get in Touch</h3>
-                <p>📞 +91 98765 43210</p>
-                <p>📧 info@yogacenter.com</p>
+                <h3>📱 Contact Details</h3>
+                <p>Phone: <strong>+91 98765 43210</strong></p>
+                <p>Email: <strong>info@yogacenter.com</strong></p>
+                <p>Follow us on social media for wellness tips!</p>
             </div>
         </div>
 
-        <!-- Contact Form -->
-        <h2>Send Us a Message</h2>
+        <h2>🧘‍♀️ Send Us a Message</h2>
         <form>
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <input type="tel" placeholder="Your Phone" required>
-            <textarea rows="4" placeholder="Your Message"></textarea>
+            <textarea rows="4" placeholder="Write your message here..." required></textarea>
             <button type="submit">Send Message</button>
         </form>
 
-        <!-- Map -->
         <div class="map">
-            <h2>Find Us Here</h2>
+            <h2>📍 Find Us Here</h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609825973!2d72.74110019065044!3d19.082197838114064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63abdb8f9d9%3A0x8b9c4d5dbf6a3e11!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1694250000000"
                 allowfullscreen="" loading="lazy"></iframe>
@@ -180,14 +270,16 @@
     </div>
 
     <footer>
-        <p>📍 Location: Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
+        <p>📍 Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
         <p>Follow us:
             <span class="social">
-                <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a>
-                <a href="https://www.facebook.com/">📘 Facebook</a>
-                <a href="https://www.instagram.com/">📸 Instagram</a>
+                <a href="#">🌐 Website</a>
+                <a href="#">📘 Facebook</a>
+                <a href="#">📸 Instagram</a>
             </span>
+        </p>
+        <p>© 2025 Meditation & Yoga | Designed for Inner Peace 🌿</p>
+    </footer>
 </body>
 
 </html>
-        
