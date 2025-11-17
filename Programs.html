@@ -2,151 +2,270 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs | Meditation & Yoga</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: #f9f9f9;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs | Meditation & Yoga Center</title>
 
-        header {
-            background: #2e7d32;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav {
-            background: #388e3c;
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            flex-wrap: wrap;
-        }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 8px 15px;
-            font-weight: bold;
-        }
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #2e7d32, #1b5e20);
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
 
-        .container {
-            padding: 40px;
-            max-width: 1100px;
-            margin: auto;
-        }
+    header p {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #2e7d32;
-        }
+    /* Navbar */
+    nav {
+      background: #388e3c;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    }
 
-        /* Programs Section */
-        .programs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 8px 18px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+    nav a:hover {
+      color: #ffeb3b;
+      transform: scale(1.1);
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    /* Container */
+    .container {
+      flex: 1;
+      padding: 60px 25px;
+      max-width: 1250px;
+      margin: auto;
+    }
 
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 15px;
-        }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1b5e20;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        footer {
-            background: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+    /* Program Cards */
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 30px;
+    }
 
-        .social a {
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+    .card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 16px;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #2e7d32;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(90deg, #2e7d32, #1b5e20);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 15px;
+      margin-top: 50px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .social a:hover {
+      color: #ffeb3b;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        font-size: 15px;
+        margin: 5px 12px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        display: block;
+        padding: 6px 0;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 40px 15px;
+      }
+
+      .card img {
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>🌸 Meditation & Yoga 🌸</h1>
-        <p>Balance your mind, body & soul</p>
-    </header>
-    <nav>
-                <a href="./Home.html">Home</a>
-                <a href="./Index.html">About</a>
-                <a href="./Programs.html">Programs</a>
-                <a href="./Testimonials.html">Testimonials</a>
-                <a href="./Schedual.html">Schedule</a>
-                <a href="./Gallery.html">Gallery</a>
-                <a href="./Contact.html">Contact</a>
-    </nav>
+  <header>
+    <h1>🌸 Meditation & Yoga 🌸</h1>
+    <p>Balance Your Mind, Body & Soul</p>
+  </header>
 
-    <div class="container">
-        <h2>Our Programs</h2>
-        <div class="programs">
-            <div class="card">
-                <img src="./Images/Dm3Mrngyoga.png" alt="Morning Yoga">
-                <h3>🧘 Morning Yoga</h3>
-                <p>Start your day with energizing yoga postures to refresh body and mind.</p>
-            </div>
-            <div class="card">
-                <img src="./Images/Dm3Meditation.png" alt="Meditation">
-                <h3>🌙 Evening Meditation</h3>
-                <p>Calm your thoughts and release stress with guided meditation sessions.</p>
-            </div>
-            <div class="card">
-                <img src="./Images/Dm3poweryoga.png" alt="Power Yoga">
-                <h3>💪 Power Yoga</h3>
-                <p>Boost stamina, flexibility, and strength with dynamic power yoga.</p>
-            </div>
-            <div class="card">
-                <img src="./Images/Dm3Retrate.png" alt="Yoga Retreat">
-                <h3>🌿 Mindfulness Retreats</h3>
-                <p>Weekend retreats designed to reconnect you with nature and inner peace.</p>
-            </div>
-        </div>
-    </div>
+  <nav>
+    <a href="./Home.html">Home</a>
+    <a href="./Index.html">About</a>
+    <a href="./Programs.html">Programs</a>
+    <a href="./Testimonials.html">Testimonials</a>
+    <a href="./Schedule.html">Schedule</a>
+    <a href="./Gallery.html">Gallery</a>
+    <a href="./Contact.html">Contact</a>
+  </nav>
 
-    <footer>
-        <p>📍 Location: Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
-        <p>Follow us:
-            <span class="social">
-                <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a>
-                <a href="https://www.facebook.com/">📘 Facebook</a>
-                <a href="https://www.instagram.com/">📸 Instagram</a>
-            </span>
+  <div class="container">
+    <h2>Our Signature Programs</h2>
+    <div class="programs">
+      <div class="card">
+        <img src="./Images/Dm3Mrngyoga.png" alt="Morning Yoga">
+        <h3>🧘 Morning Yoga</h3>
+        <p>
+          Awaken your senses with sunrise yoga sessions designed to energize
+          your body and calm your mind. Our guided sequences focus on balance,
+          flexibility, and mental clarity to set a positive tone for your day.
         </p>
-        <p>©️ 2025 Meditation & Yoga | All Rights Reserved</p>
-    </footer>
+      </div>
+
+      <div class="card">
+        <img src="./Images/Dm3Meditation.png" alt="Evening Meditation">
+        <h3>🌙 Evening Meditation</h3>
+        <p>
+          End your day with serenity. Our evening meditations combine mindful
+          breathing, visualization, and sound therapy to reduce anxiety,
+          improve focus, and promote deep relaxation.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="./Images/Dm3poweryoga.png" alt="Power Yoga">
+        <h3>💪 Power Yoga</h3>
+        <p>
+          Build endurance and strength through high-intensity postures and
+          controlled breathing. Ideal for fitness enthusiasts seeking both
+          physical challenge and mental discipline.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="./Images/Dm3Retrate.png" alt="Mindfulness Retreats">
+        <h3>🌿 Mindfulness Retreats</h3>
+        <p>
+          Step away from daily stress and immerse yourself in nature. Our
+          weekend retreats feature guided yoga, organic meals, and peaceful
+          surroundings that nurture your soul and rejuvenate your spirit.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>📍 Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
+    <p>Follow us:
+      <span class="social">
+        <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a>
+        <a href="https://www.facebook.com/">📘 Facebook</a>
+        <a href="https://www.instagram.com/">📸 Instagram</a>
+      </span>
+    </p>
+    <p>©️ 2025 Meditation & Yoga | All Rights Reserved</p>
+  </footer>
 </body>
 
 </html>
