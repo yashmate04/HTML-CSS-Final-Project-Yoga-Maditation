@@ -6,26 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule | Meditation & Yoga</title>
     <style>
+        /* ===== Base Styles ===== */
         body {
             margin: 0;
             font-family: "Segoe UI", sans-serif;
             background: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
 
+        /* ===== Header ===== */
         header {
-            background: #2e7d32;
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
             color: white;
-            padding: 20px;
+            padding: 30px 15px;
             text-align: center;
+            border-bottom: 4px solid #1b5e20;
         }
 
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== Navigation ===== */
         nav {
             background: #388e3c;
             display: flex;
             justify-content: center;
-            padding: 10px;
             flex-wrap: wrap;
+            padding: 12px;
+            border-bottom: 3px solid #2e7d32;
         }
 
         nav a {
@@ -33,30 +49,44 @@
             text-decoration: none;
             margin: 8px 15px;
             font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #ffeb3b;
+            transform: scale(1.1);
         }
 
+        /* ===== Main Container ===== */
         .container {
-            padding: 40px;
+            padding: 40px 20px;
             max-width: 1100px;
             margin: auto;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
             color: #2e7d32;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
-        /* Schedule Table */
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        /* ===== Schedule Box ===== */
         .schedule {
             background: #e3f2fd;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #1976d2;
+            border-bottom: 5px solid #1976d2;
         }
 
         table {
@@ -75,6 +105,7 @@
         th {
             background: #1976d2;
             color: white;
+            font-size: 1rem;
         }
 
         tr:nth-child(even) {
@@ -85,18 +116,93 @@
             background: #dbeafe;
         }
 
+        /* ===== Additional Section ===== */
+        .notes {
+            margin-top: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #2e7d32;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .notes h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .notes ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .notes li {
+            margin-bottom: 8px;
+        }
+
+        /* ===== Footer ===== */
         footer {
-            background: #2e7d32;
+            background: linear-gradient(90deg, #2e7d32, #388e3c);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             margin-top: 40px;
+            border-top: 4px solid #1b5e20;
         }
 
         .social a {
             margin: 0 10px;
-            color: white;
+            color: #ffeb3b;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social a:hover {
+            color: #fff;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                margin: 6px 10px;
+                font-size: 0.95rem;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .notes {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .intro {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
@@ -104,21 +210,27 @@
 <body>
     <header>
         <h1>🌸 Meditation & Yoga 🌸</h1>
-        <p>Balance your mind, body & soul</p>
+        <p>Balance your mind, body & soul through mindfulness and movement</p>
     </header>
 
     <nav>
-            <a href="./Home.html">Home</a>
-            <a href="./Index.html">About</a>
-            <a href="./Programs.html">Programs</a>
-            <a href="./Testimonials.html">Testimonials</a>
-            <a href="./Schedual.html">Schedule</a>
-            <a href="./Gallery.html">Gallery</a>
-            <a href="./Contact.html">Contact</a>
+        <a href="./Home.html">Home</a>
+        <a href="./Index.html">About</a>
+        <a href="./Programs.html">Programs</a>
+        <a href="./Testimonials.html">Testimonials</a>
+        <a href="./Schedual.html">Schedule</a>
+        <a href="./Gallery.html">Gallery</a>
+        <a href="./Contact.html">Contact</a>
     </nav>
 
     <div class="container">
-        <h2>Weekly Class Schedule</h2>
+        <h2>🕉️ Weekly Class Schedule</h2>
+        <p class="intro">
+            Our weekly schedule offers a balance of yoga, meditation, and mindfulness practices to help rejuvenate your
+            body and calm your mind. Each session is guided by certified instructors to ensure a peaceful and effective
+            experience for every participant.
+        </p>
+
         <div class="schedule">
             <table>
                 <tr>
@@ -133,21 +245,21 @@
                     <td>6:00 – 7:00 AM</td>
                     <td>7:30 – 8:30 AM</td>
                     <td>6:00 – 7:00 PM</td>
-                    <td>–</td>
+                    <td>Intro to Mindful Living</td>
                 </tr>
                 <tr>
                     <td>Tuesday</td>
                     <td>6:00 – 7:00 AM</td>
                     <td>7:30 – 8:30 AM</td>
                     <td>6:00 – 7:00 PM</td>
-                    <td>Pranayama (7:15 PM)</td>
+                    <td>Pranayama & Breath Control</td>
                 </tr>
                 <tr>
                     <td>Wednesday</td>
                     <td>6:00 – 7:00 AM</td>
                     <td>7:30 – 8:30 AM</td>
                     <td>6:00 – 7:00 PM</td>
-                    <td>–</td>
+                    <td>Gentle Flow Yoga</td>
                 </tr>
                 <tr>
                     <td>Thursday</td>
@@ -161,23 +273,34 @@
                     <td>6:00 – 7:00 AM</td>
                     <td>7:30 – 8:30 AM</td>
                     <td>6:00 – 7:00 PM</td>
-                    <td>–</td>
+                    <td>Sound Healing Session</td>
                 </tr>
                 <tr>
                     <td>Saturday</td>
                     <td>7:00 – 8:00 AM</td>
                     <td>8:30 – 9:30 AM</td>
                     <td>5:30 – 6:30 PM</td>
-                    <td>Weekend Retreat</td>
+                    <td>Weekend Wellness Retreat</td>
                 </tr>
                 <tr>
                     <td>Sunday</td>
                     <td>8:00 – 9:00 AM</td>
                     <td>–</td>
                     <td>5:00 – 6:00 PM</td>
-                    <td>Group Meditation</td>
+                    <td>Group Meditation & Reflection</td>
                 </tr>
             </table>
+        </div>
+
+        <div class="notes">
+            <h3>💡 Important Notes</h3>
+            <ul>
+                <li>Please arrive 10 minutes early for each session.</li>
+                <li>Carry your own yoga mat and water bottle.</li>
+                <li>All sessions are beginner-friendly unless specified.</li>
+                <li>Weekend programs require prior registration.</li>
+                <li>Special full-moon meditation held every month 🌕.</li>
+            </ul>
         </div>
     </div>
 
@@ -185,9 +308,9 @@
         <p>📍 Location: Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
         <p>Follow us:
             <span class="social">
-                <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a>
-                <a href="https://www.facebook.com/">📘 Facebook</a>
-                <a href="https://www.instagram.com/">📸 Instagram</a>
+                <a href="#">🌐 Website</a>
+                <a href="#">📘 Facebook</a>
+                <a href="#">📸 Instagram</a>
             </span>
         </p>
         <p>©️ 2025 Meditation & Yoga | All Rights Reserved</p>
