@@ -6,26 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials | Meditation & Yoga</title>
     <style>
+        /* ===== Base Styles ===== */
         body {
             margin: 0;
             font-family: "Segoe UI", sans-serif;
             background: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
 
+        /* ===== Header ===== */
         header {
-            background: #2e7d32;
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
             color: white;
-            padding: 20px;
+            padding: 30px 15px;
             text-align: center;
+            border-bottom: 4px solid #1b5e20;
         }
 
+        header h1 {
+            font-size: 2.3rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== Navigation ===== */
         nav {
             background: #388e3c;
             display: flex;
             justify-content: center;
-            padding: 10px;
+            padding: 12px;
             flex-wrap: wrap;
+            border-bottom: 3px solid #2e7d32;
         }
 
         nav a {
@@ -33,14 +49,17 @@
             text-decoration: none;
             margin: 8px 15px;
             font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #ffeb3b;
+            transform: scale(1.1);
         }
 
+        /* ===== Container ===== */
         .container {
-            padding: 40px;
+            padding: 40px 20px;
             max-width: 1100px;
             margin: auto;
         }
@@ -49,40 +68,58 @@
             text-align: center;
             margin-bottom: 20px;
             color: #2e7d32;
+            font-size: 2rem;
         }
 
-        /* Testimonials Section */
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* ===== Testimonials Grid ===== */
         .testimonials {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
         }
 
         .card img {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
-            border: 3px solid #2e7d32;
+            border: 4px solid #2e7d32;
         }
 
         .card h3 {
             margin: 10px 0 5px;
             color: #2e7d32;
+            font-size: 1.2rem;
+        }
+
+        .card span {
+            display: block;
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 10px;
         }
 
         .card p {
@@ -91,18 +128,82 @@
             color: #555;
         }
 
+        /* ===== Highlight Section ===== */
+        .highlight {
+            background: #e8f5e9;
+            padding: 25px;
+            border-left: 6px solid #2e7d32;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .highlight p {
+            color: #444;
+        }
+
+        /* ===== Footer ===== */
         footer {
-            background: #2e7d32;
+            background: linear-gradient(90deg, #2e7d32, #388e3c);
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 25px;
+            margin-top: 50px;
+            border-top: 4px solid #1b5e20;
         }
 
         .social a {
             margin: 0 10px;
-            color: white;
+            color: #ffeb3b;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social a:hover {
+            color: white;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.9rem;
+            }
+
+            nav a {
+                margin: 6px 10px;
+                font-size: 0.95rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .intro {
+                font-size: 0.95rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
         }
     </style>
 </head>
@@ -110,7 +211,7 @@
 <body>
     <header>
         <h1>🌸 Meditation & Yoga 🌸</h1>
-        <p>Balance your mind, body & soul</p>
+        <p>Balance your mind, body & soul through real experiences and stories</p>
     </header>
 
     <nav>
@@ -124,31 +225,61 @@
     </nav>
 
     <div class="container">
-        <h2>What Our Members Say</h2>
+        <h2>💬 What Our Members Say</h2>
+        <p class="intro">
+            Hear from our wonderful community of yoga and meditation practitioners who have experienced life-changing
+            growth, mindfulness, and healing through our sessions. Their journeys inspire us every day.
+        </p>
+
         <div class="testimonials">
             <div class="card">
                 <img src="./Images/Dm4riview.png" alt="Client 1">
                 <h3>Priya Sharma</h3>
-                <p>"The morning yoga sessions have completely transformed my energy levels. I feel refreshed and more
-                    focused every day!"</p>
+                <span>Software Engineer, Mumbai</span>
+                <p>"The morning yoga sessions have completely transformed my lifestyle. My stress levels have dropped,
+                    and I feel energized and calm throughout the day."</p>
             </div>
+
             <div class="card">
                 <img src="./Images/Dm4Maditaion.png" alt="Client 2">
                 <h3>Rohan Mehta</h3>
-                <p>"Evening meditation has helped me manage stress better. The instructors are so patient and caring."
-                </p>
+                <span>Marketing Executive, Pune</span>
+                <p>"Evening meditation has become my favorite part of the day. The instructors are incredibly patient
+                    and
+                    guide you gently through every breath."</p>
             </div>
+
             <div class="card">
                 <img src="./Images/Dm4.Anjv.png" alt="Client 3">
                 <h3>Anjali Verma</h3>
-                <p>"The weekend retreat was life-changing! I reconnected with myself and returned home with peace and
-                    clarity."</p>
+                <span>Teacher, Delhi</span>
+                <p>"The weekend retreat was more than just relaxation — it was self-discovery. I returned home with
+                    renewed focus and inner peace."</p>
             </div>
+
             <div class="card">
                 <img src="./Images/Dm4Vikram.png" alt="Client 4">
                 <h3>Vikram Singh</h3>
-                <p>"Power yoga classes are the best! My strength and flexibility have improved so much."</p>
+                <span>Entrepreneur, Jaipur</span>
+                <p>"Power yoga classes have strengthened not just my body, but also my mind. I’ve built consistency and
+                    clarity through these sessions."</p>
             </div>
+
+            <div class="card">
+                <img src="./Images/Dm4New.png" alt="Client 5">
+                <h3>Meera Nair</h3>
+                <span>Artist, Kerala</span>
+                <p>"I joined to relax, but I found a supportive community and a deeper connection with myself. Truly a
+                    transformative experience."</p>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <h3>🌟 Member Impact</h3>
+            <p>
+                Over 5,000 members have experienced reduced stress, better sleep, and improved mindfulness through our
+                guided yoga and meditation programs. Join our growing family and start your transformation today.
+            </p>
         </div>
     </div>
 
@@ -156,7 +287,7 @@
         <p>📍 Location: Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
         <p>Follow us:
             <span class="social">
-                <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a>
+                <a href="https://en.wikipedia.org/wiki/Website">🌐 Website</a>
                 <a href="https://www.facebook.com/">📘 Facebook</a>
                 <a href="https://www.instagram.com/">📸 Instagram</a>
             </span>
