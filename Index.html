@@ -1,58 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meditation & Yoga</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meditation & Yoga | Inner Peace & Wellness</title>
+
     <style>
+        /* ---------- Global Styles ---------- */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: #f9f9f9;
+            font-family: "Poppins", "Segoe UI", sans-serif;
+            background: #fafafa;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background: #2e7d32;
+            background: linear-gradient(135deg, #43a047, #1b5e20);
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 40px 15px;
+            animation: fadeInDown 1s ease-in-out;
         }
 
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        /* ---------- Navigation ---------- */
         nav {
             background: #388e3c;
             display: flex;
             justify-content: center;
-            padding: 10px;
+            align-items: center;
             flex-wrap: wrap;
+            padding: 12px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 8px 15px;
-            font-weight: bold;
+            margin: 10px 18px;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #c8e6c9;
+            transform: scale(1.05);
         }
 
+        /* ---------- Hero Section ---------- */
         .hero {
-            background: url('https://images.unsplash.com/photo-1552083375-1447ce886485') no-repeat center/cover; height: 60vh;
+            background: url('https://images.unsplash.com/photo-1552083375-1447ce886485') no-repeat center/cover;
+            height: 70vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-            font-size: 2rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
             text-align: center;
             padding: 20px;
+            animation: zoomIn 1.5s ease;
         }
 
+        .hero h2 {
+            font-size: 2.4rem;
+            max-width: 700px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px 20px;
+            border-radius: 10px;
+        }
+
+        /* ---------- Container ---------- */
         .container {
-            padding: 40px;
-            max-width: 1100px;
+            padding: 50px 20px;
+            max-width: 1200px;
             margin: auto;
         }
 
@@ -60,120 +95,249 @@
             text-align: center;
             margin-bottom: 20px;
             color: #2e7d32;
+            font-size: 2rem;
+            position: relative;
         }
 
-        /* About */
+        h2::after {
+            content: "";
+            width: 60px;
+            height: 4px;
+            background: #81c784;
+            display: block;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ---------- About Section ---------- */
         .about {
             background: #e8f5e9;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 50px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         .about img {
-            width: 300px;
-            border-radius: 12px;
+            width: 320px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Programs */
-        .programs,
-        .gallery {
+        .about p {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* ---------- Programs ---------- */
+        .programs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
         .card {
             background: white;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
         }
 
         .card img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 15px;
         }
 
-        /* Testimonials */
+        /* ---------- Testimonials ---------- */
         .testimonial {
-            background: #fff3e0;
+            background: #fff8e1;
             padding: 20px;
             border-radius: 12px;
-            margin-bottom: 20px;
             text-align: center;
+            margin-bottom: 25px;
             font-style: italic;
+            transition: 0.3s;
         }
 
-        /* Schedule */
+        .testimonial:hover {
+            background: #ffecb3;
+        }
+
+        /* ---------- Schedule ---------- */
         .schedule {
             text-align: center;
             background: #e3f2fd;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 50px;
         }
 
         .schedule table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 15px;
         }
 
         .schedule th,
         .schedule td {
             padding: 12px;
             border: 1px solid #90caf9;
+            font-size: 1rem;
         }
 
-        /* Form */
+        .schedule th {
+            background: #64b5f6;
+            color: white;
+        }
+
+        /* ---------- Gallery ---------- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            height: 200px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* ---------- Contact Form ---------- */
         form {
             background: #fce4ec;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 30px;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 40px;
         }
 
         form input,
         form textarea,
         form button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             border: none;
             border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        form input,
+        form textarea {
+            background: white;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         form button {
             background: #2e7d32;
             color: white;
             cursor: pointer;
-            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         form button:hover {
             background: #1b5e20;
         }
 
+        /* ---------- Footer ---------- */
         footer {
             background: #2e7d32;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 25px;
+            margin-top: 40px;
         }
 
         .social a {
             margin: 0 10px;
             color: white;
             text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social a:hover {
+            color: #c8e6c9;
+        }
+
+        /* ---------- Animations ---------- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about img {
+                width: 100%;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
         }
     </style>
 </head>
@@ -181,7 +345,7 @@
 <body>
     <header>
         <h1>🌸 Meditation & Yoga 🌸</h1>
-        <p>Balance your mind, body & soul</p>
+        <p>Awaken your mind, energize your body, and find your inner balance</p>
     </header>
 
     <nav>
@@ -194,58 +358,58 @@
         <a href="./Contact.html">Contact</a>
     </nav>
 
-    <!-- Hero -->
-    <div class="hero">
-        <h2>Find Inner Peace Through Yoga & Meditation</h2>
-    </div>
+    <section class="hero">
+        <h2>Embrace Serenity Through Yoga & Meditation</h2>
+    </section>
 
     <div class="container">
         <!-- About -->
-        <div class="about">
-            <img src="./Images/yoga pose photo.png" alt="Yoga Pose">
+        <section class="about">
+            <img src="./Images/yoga pose photo.png" alt="Yoga Pose" />
             <div>
                 <h2>About Us</h2>
                 <p>
-                    We provide holistic yoga and meditation sessions to help you relieve stress,
-                    improve flexibility, and discover inner calm. Our certified trainers guide
-                    you on a journey of wellness and mindfulness.
+                    At <strong>Meditation & Yoga</strong>, we believe wellness is not a destination but a journey.
+                    Our certified instructors combine ancient practices with modern mindfulness to rejuvenate your
+                    body, mind, and spirit. Whether you're a beginner or an experienced practitioner, our sessions
+                    guide you to reconnect with your inner calm.
                 </p>
             </div>
-        </div>
+        </section>
 
         <!-- Programs -->
-        <h2>Our Programs</h2>
+        <h2>Our Signature Programs</h2>
         <div class="programs">
             <div class="card">
-                <img src="./Images/morning yoga routain.png" alt="Morning Yoga">
-                <h3>🧘 Morning Yoga</h3>
-                <p>Start your day with energizing yoga postures.</p>
+                <img src="./Images/morning yoga routain.png" alt="Morning Yoga" />
+                <h3>🧘 Morning Flow</h3>
+                <p>Awaken your senses and boost your energy with sun salutation and deep breathing.</p>
             </div>
             <div class="card">
-                <img src="./Images/maditation.png" alt="Meditation">
+                <img src="./Images/maditation.png" alt="Meditation" />
                 <h3>🌙 Evening Meditation</h3>
-                <p>Calm your mind and release stress with guided meditation.</p>
+                <p>Unwind after a long day with mindfulness practices to bring peace and relaxation.</p>
             </div>
             <div class="card">
-                <img src="./Images/powerpresence.png" alt="Power Yoga">
+                <img src="./Images/powerpresence.png" alt="Power Yoga" />
                 <h3>💪 Power Yoga</h3>
-                <p>Boost stamina and flexibility with dynamic yoga sessions.</p>
+                <p>Increase endurance, flexibility, and strength with powerful flow sessions.</p>
             </div>
             <div class="card">
-                <img src="./Images/reatrateyoga.png" alt="Yoga Retreat">
-                <h3>🌿 Mindfulness Retreats</h3>
-                <p>Weekend retreats to reconnect with nature and yourself.</p>
+                <img src="./Images/reatrateyoga.png" alt="Retreat Yoga" />
+                <h3>🌿 Wellness Retreats</h3>
+                <p>Escape to serene locations for a weekend of mindfulness, nature, and detox.</p>
             </div>
         </div>
 
         <!-- Testimonials -->
         <h2>What Our Students Say</h2>
-        <div class="testimonial">"These yoga classes changed my life! I feel calmer and healthier." - Priya</div>
-        <div class="testimonial">"The meditation sessions helped me manage stress at work." - Rohan</div>
-        <div class="testimonial">"Friendly trainers and peaceful environment. Highly recommend!" - Aisha</div>
+        <div class="testimonial">“A life-changing experience! I’ve found peace within myself.” – <b>Priya</b></div>
+        <div class="testimonial">“The meditation classes improved my focus and sleep quality.” – <b>Rohan</b></div>
+        <div class="testimonial">“Highly professional instructors and calming ambiance.” – <b>Aisha</b></div>
 
         <!-- Schedule -->
-        <h2>Weekly Schedule</h2>
+        <h2>Weekly Class Schedule</h2>
         <div class="schedule">
             <table>
                 <tr>
@@ -272,32 +436,32 @@
         </div>
 
         <!-- Gallery -->
-        <h2>Gallery</h2>
+        <h2>Our Moments</h2>
         <div class="gallery">
-            <img src="./Images/yogaclass.png" alt="Yoga Class" class="card">
-            <img src="./Images/madiaionyoga.png" alt="Meditation" class="card">
-            <img src="./Images/outdoor.png" alt="Outdoor Yoga" class="card">
+            <img src="./Images/yogaclass.png" alt="Yoga Class" />
+            <img src="./Images/madiaionyoga.png" alt="Meditation" />
+            <img src="./Images/outdoor.png" alt="Outdoor Yoga" />
         </div>
 
         <!-- Contact Form -->
         <h2>Join a Session</h2>
         <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <input type="tel" placeholder="Your Phone" required>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="tel" placeholder="Your Phone" required />
             <textarea rows="4" placeholder="Message"></textarea>
             <button type="submit">Register Now</button>
         </form>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>📍 Location: Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
-        <p>Follow us:
+        <p>📍 Green Valley Yoga Center, Mumbai | 📞 +91 98765 43210</p>
+        <p>
+            Follow us:
             <span class="social">
-                <a href="https://www.website.com/?source=SC&country=IN">🌐 Website</a> 
-                <a href="https://www.facebook.com/">📘 Facebook</a> 
-                <a href="https://www.instagram.com/">📸 Instagram</a>
+                <a href="#">🌐 Website</a>
+                <a href="#">📘 Facebook</a>
+                <a href="#">📸 Instagram</a>
             </span>
         </p>
         <p>© 2025 Meditation & Yoga | All Rights Reserved</p>
